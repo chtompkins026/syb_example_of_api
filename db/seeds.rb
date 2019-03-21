@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+instructors = ['Jennifer Amorosso', 'Samir Poonawala', 'Mantas Zvinas', 'Dale Moss']
+instructors.each{|ins| Instructor.create(name: ins, bio: "I am an awesome instructor.", email:'google1@gmail.com', admin: TRUE)}
