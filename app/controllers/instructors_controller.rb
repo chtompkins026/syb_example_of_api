@@ -24,3 +24,6 @@ class Api::V1::InstructorsController < ApplicationController
     params.require(:instructor).permit(:id, :name, :email,:bio, :admin)
   end
 end
+
+
+#test
