@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 const AllInstructors = (props) => {
-var instructors = props.fruits.map((instructor) => {
+var instructors = props.instructors.map((instructor) => {
     return(
       <div key={instructor.id}>
         <h1>{instructor.name}</h1>

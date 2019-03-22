@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Body from ""
+import Body from "./Body"
 
 const Main = (props) => {
     return(
