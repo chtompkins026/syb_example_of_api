@@ -6,7 +6,9 @@ const AllInstructors = (props) => {
 var instructors = props.instructors.map((instructor) => {
     return(
       <div key={instructor.id}>
-        <Instructor instructor={instructor} handleDelete={props.handleDelete}/>
+        <Instructor instructor={instructor}
+          handleDelete={props.handleDelete}
+          handleUpdate={props.handleUpdate}/>
       </div>
     )
   })

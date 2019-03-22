@@ -11,8 +11,12 @@ class Body extends React.Component {
     };
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
     this.addNewInstructor = this.addNewInstructor.bind(this)
+
     this.handleDelete = this.handleDelete.bind(this)
     this.deleteInstructor = this.deleteInstructor.bind(this)
+
+    this.handleUpdate = this.handleUpdate.bind(this);
+    this.updateInstructor = this.updateInstructor.bind(this)
   }
 
   handleFormSubmit(name, bio){
@@ -55,6 +59,28 @@ class Body extends React.Component {
     })
   }
 
+
+  handleUpdate(instructor){
+   fetch(`http://localhost:3000/api/instructors/${instructor.id}`,
+   {
+     method: 'PUT',
+     body: JSON.stringify({instructor: instructor}),
+     headers: {
+       'Content-Type': 'application/json'
+     }
+   }).then((response) => {
+       this.updateInstructor(instructor)
+     })
+ }
+
+ updateInstructor(instructor){
+   let newI = this.state.instructors.filter((i) => i.id !== instructor.id)
+   newI.push(instructor)
+   this.setState({
+     instructors: newI
+   })
+ }
+
 componentDidMount(){
     fetch('/api/instructors.json')
       .then((response) => {return response.json()})
@@ -66,7 +92,8 @@ render(){
       <div>
         <NewInstructor handleFormSubmit={this.handleFormSubmit}/>
         <AllInstructors instructors={this.state.instructors}
-          handleDelete={this.handleDelete} />
+          handleDelete={this.handleDelete}
+          handleUpdate = {this.handleUpdate} />
       </div>
     )
   }
