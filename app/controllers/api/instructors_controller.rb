@@ -21,14 +21,14 @@ class Api::InstructorsController < ApplicationController
   def update
     instructor = Instructor.find(params[:id])
     instructor.update_attributes(instructor_params)
-    render json: instructor 
+    render json: instructor
   end
 
   private
 
 
   def instructor_params
-    params.require(:instructor).permit(:username, :password, :password_confirmation)
+    params.require(:instructor).permit(:name, :email, :bio, :admin)
   end
 
 end

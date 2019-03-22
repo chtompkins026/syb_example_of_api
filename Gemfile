@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.3.1'
 
+
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 #adding in react
 gem 'react-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
