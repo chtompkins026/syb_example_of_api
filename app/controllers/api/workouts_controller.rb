@@ -1,7 +1,12 @@
 class Api::WorkoutsController < ApplicationController
 
   def index
-    render json: Workout.all
+    instructor = Instructor.find_by(id: params[:instructor_id])
+    if instructor
+      render json: instructor.workouts
+    else
+      render json: Workout.all
+    end
   end
 
   def create

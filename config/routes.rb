@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  root to: 'home#index'
   namespace :api do
     resources :instructors do
+      resources :workouts
     end
-    root to: 'home#index'
+    resources :workouts 
   end
 end
