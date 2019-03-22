@@ -4,6 +4,6 @@ Rails.application.routes.draw do
     resources :instructors do
       resources :workouts
     end
-    resources :workouts 
+    resources :workouts
   end
 end
