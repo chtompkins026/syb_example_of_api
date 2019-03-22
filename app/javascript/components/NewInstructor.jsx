@@ -8,7 +8,7 @@ const NewInstructor = (props) => {
         <form onSubmit={ (e) => { props.handleFormSubmit(formFields.name.value, formFields.bio.value); e.target.reset();}
   }>
           <input ref={input => formFields.name = input} placeholder='Enter the instructors Name'/>
-          <input ref={input => formFields.description = input} placeholder='Enter a bio' />
+          <input ref={input => formFields.bio = input} placeholder='Enter a bio' />
           <button>Submit</button>
         </form>
       )
