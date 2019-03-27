@@ -6,7 +6,7 @@ ruby '2.3.1'
 
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 #adding in react
-
+gem 'devise'
 gem 'webpacker', '~> 4.x'
 #adding in webpacker for React integration
 # gem 'react-rails'
