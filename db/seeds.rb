@@ -11,7 +11,7 @@ require 'faker'
   Instructor.destroy_all
   Workout.destroy_all
 
-instructors = ['Jennifer Amorosso', 'Samir Poonawala', 'Mantas Zvinas', 'Dale Moss']
+instructors = ['Jennifer Amoroso', 'Samir Poonawala', 'Mantas Zvinas', 'Dale Moss']
 instructors.each{|ins| Instructor.create(name: ins, bio: "I am an awesome instructor.", email:'google1@gmail.com', admin: TRUE)}
 
 instructor1 = Instructor.first

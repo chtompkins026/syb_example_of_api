@@ -61,7 +61,7 @@ class Body extends React.Component {
 
 
   handleUpdate(instructor){
-   fetch(`http://localhost:3000/api/instructors/${instructor.id}`,
+   fetch(`/api/instructors/${instructor.id}`,
    {
      method: 'PUT',
      body: JSON.stringify({instructor: instructor}),

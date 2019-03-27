@@ -25,13 +25,13 @@ class Instructor extends React.Component{
 
    render(){
      let name = this.state.editable ? <input type='text' ref={input => this.name = input} defaultValue={this.props.instructor.name}/>:<h3>{this.props.instructor.name}</h3>
-   let bio = this.state.editable ? <input type='text' ref={input => this.bio = input} defaultValue={this.props.instructor.bio}/>:<p>{this.props.instructor.bio}</p>
+      let bio = this.state.editable ? <input type='text' ref={input => this.bio = input} defaultValue={this.props.instructor.bio}/>:<p>{this.props.instructor.bio}</p>
        return(
          <div>
            {name}
            {bio}
            <button onClick={() => this.handleEdit()}>{this.state.editable? 'Submit' : 'Edit'}</button>
-           <button onClick={() => this.props.handleDelete(this.props.fruit.id)}>Delete</button>
+           <button onClick={() => this.props.handleDelete(this.props.instructor.id)}>Delete</button>
          </div>
        )
      }

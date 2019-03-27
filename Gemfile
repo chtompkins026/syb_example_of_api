@@ -7,9 +7,9 @@ ruby '2.3.1'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 #adding in react
 
-gem 'webpacker'
+gem 'webpacker', '~> 4.x'
 #adding in webpacker for React integration
-gem 'react-rails'
+# gem 'react-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use sqlite3 as the database for Active Record
