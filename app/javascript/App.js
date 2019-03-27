@@ -10,7 +10,7 @@ import Login from "./pages/login";
 import Dashboard from "./pages/dashboard";
 import Instructors from "./pages/instructors";
 
-import NavBar from "./components/NavBar/NavBar";
+import NavBar from "./components/Navbar/NavBar";
 import Layout from "./components/Layout/Layout";
 import InstructorProfile from "./components/InstructorProfile/InstructorProfile";
 
