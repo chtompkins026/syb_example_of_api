@@ -1,27 +1,47 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
-// import "./App.css";
-import Trainers from "./pages/trainers";
+import "./App.css";
+
 import Home from "./pages/home";
 import About from "./pages/about";
-
-import NavBar from "./components/Navbar";
-import Layout from "./components/Layout";
+import Signup from "./pages/signup";
+import Login from "./pages/login";
+import Dashboard from "./pages/dashboard";
 import Instructors from "./pages/instructors";
+
+import NavBar from "./components/NavBar/NavBar";
+import Layout from "./components/Layout/Layout";
+import InstructorProfile from "./components/InstructorProfile/InstructorProfile";
+
+const PrivateRoute = ({ component: Component, ...props }) => {
+  //TODO: Add authentication logic here
+  let isAuthenticated = true;
+
+  return isAuthenticated ? (
+    <Route {...props} component={Component} />
+  ) : (
+    <Redirect to="/login" />
+  );
+};
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavBar />
         <Router>
-          <Layout>
-            <Route path="/" exact component={Home} />
-            <Route path="/trainers" component={Trainers} />
-            <Route path="/about" component={About} />
-            <Route path="/instructors" component={Instructors} />
-          </Layout>
+          <>
+            <NavBar />
+            <Layout>
+              <Route exact path="/" component={Home} />
+              <Route path="/about" component={About} />
+              <Route exact path="/instructors" component={Instructors} />
+              <Route path="/instructors/:slug" component={InstructorProfile} />
+              <PrivateRoute path="/dashboard" component={Dashboard} />
+              <Route path="/login" component={Login} />
+              <Route path="/signup" component={Signup} />
+            </Layout>
+          </>
         </Router>
       </div>
     );
