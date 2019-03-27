@@ -7,6 +7,8 @@
 # Ignore bundler config.
 /.bundle
 
+.env
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
@@ -29,6 +31,7 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/config/secrets.yml
 
 /public/packs
 /public/packs-test
